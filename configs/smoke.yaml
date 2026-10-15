@@ -1,0 +1,28 @@
+paper:
+  slug: face-phylogeny-tree-using-basis-functions
+  title: "Face Phylogeny Tree Using Basis Functions"
+data:
+  lfw_root: ../../datasets/lfw
+  root: ../../datasets/lfw
+  min_images: 5
+  max_subjects: 12
+model:
+  basis: chebyshev
+  order: 4
+  gray_size: 48
+train:
+  protocol: smoke
+  seed: 42
+  chain_length: 3
+  pairs_per_subject: 2
+eval:
+  n_sets: 8
+  subject_offset: 12
+  chain_length: 3
+  bandwidth: 0.4
+paths:
+  checkpoint_dir: outputs/checkpoints/smoke
+  log_dir: outputs/logs/smoke
+  pred_dir: outputs/predictions/smoke
+  figure_dir: outputs/figures/smoke
+device: cpu
