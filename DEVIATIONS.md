@@ -6,3 +6,4 @@
 | D2 | Bases | Legendre, Chebyshev, Gabor, Gaussian/Bump RBF | Chebyshev/Legendre separable poly | Core IPT pipeline |
 | D3 | Transforms | Photometric + geometric + DL | Photometric chain | Scope |
 | D4 | Tree algorithm | DFS spanning as in prior IPT | Greedy best-parent edges | Simpler reconstruction |
+| D5 | α estimation | Iterative ICE updates (Eq. 4) | Closed-form ridge least squares | Same objective (Eq. 1) |

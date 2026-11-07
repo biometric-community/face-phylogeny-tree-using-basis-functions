@@ -19,7 +19,7 @@ eval:
   n_sets: 60
   subject_offset: 120
   chain_length: 4
-  bandwidth: 0.35
+  bandwidth: 0.05
 paths:
   checkpoint_dir: outputs/checkpoints/full
   log_dir: outputs/logs/full

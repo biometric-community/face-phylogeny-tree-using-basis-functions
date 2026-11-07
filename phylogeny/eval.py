@@ -34,7 +34,7 @@ def load_config(path: str) -> dict:
 
 def pairwise_alphas(grays: List[np.ndarray], family: str, order: int) -> np.ndarray:
     n = len(grays)
-    d = order * 2
+    d = order
     out = np.zeros((n, n, d), dtype=np.float64)
     for i in range(n):
         for j in range(n):
@@ -65,7 +65,7 @@ def evaluate(cfg: dict) -> Dict:
     order = int(blob["order"]) if "order" in blob else int(cfg["model"].get("order", 6))
     gray_size = int(cfg["model"].get("gray_size", 64))
     chain_len = int(cfg["eval"].get("chain_length", 4))
-    bandwidth = float(cfg["eval"].get("bandwidth", 0.3))
+    bandwidth = float(cfg["eval"].get("bandwidth", 0.05))
 
     rank1 = rank2 = rank3 = 0
     edge_accs = []

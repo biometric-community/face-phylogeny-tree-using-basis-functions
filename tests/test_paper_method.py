@@ -59,6 +59,13 @@ def test_alpha_depends_only_on_pixel_values(pair):
     assert np.allclose(fit_separable_poly(src, dst), fit_separable_poly(shuffled_src, shuffled_dst), atol=1e-6)
 
 
+def test_alpha_recovers_a_known_polynomial_transform():
+    src = np.random.RandomState(5).rand(32, 32)
+    alpha = np.array([0.4, 0.3, 0.1, -0.05, 0.02, 0.01])
+    dst = chebyshev.chebval(2.0 * src - 1.0, alpha)
+    assert np.allclose(fit_separable_poly(src, dst, order=6), alpha, atol=1e-4)
+
+
 def test_parzen_density_of_one_sample_is_a_gaussian():
     x = np.array([0.3, -0.2])
     h = 0.5

@@ -19,7 +19,7 @@ eval:
   n_sets: 8
   subject_offset: 12
   chain_length: 3
-  bandwidth: 0.4
+  bandwidth: 0.05
 paths:
   checkpoint_dir: outputs/checkpoints/smoke
   log_dir: outputs/logs/smoke

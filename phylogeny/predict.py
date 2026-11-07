@@ -33,13 +33,13 @@ def main() -> None:
     order = int(blob["order"])
     gray_size = int(cfg["model"].get("gray_size", 64))
     grays = [to_gray_array(Image.open(p).convert("RGB"), gray_size) for p in paths]
-    n, d = len(grays), order * 2
+    n, d = len(grays), order
     alphas = np.zeros((n, n, d))
     for i in range(n):
         for j in range(n):
             if i != j:
                 alphas[i, j] = fit_separable_poly(grays[j], grays[i], family=family, order=order)
-    S = build_score_matrix(alphas, alphas, blob["pf"], blob["pb"], bandwidth=float(cfg["eval"].get("bandwidth", 0.3)))
+    S = build_score_matrix(alphas, alphas, blob["pf"], blob["pb"], bandwidth=float(cfg["eval"].get("bandwidth", 0.05)))
     cands = root_candidates(S, top_k=3)
     out_dir = Path(cfg["paths"]["pred_dir"])
     out_dir.mkdir(parents=True, exist_ok=True)

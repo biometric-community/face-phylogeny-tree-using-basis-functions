@@ -40,6 +40,6 @@ def test_root_identification_beats_chance():
             for j in range(CHAIN):
                 if i != j:
                     alphas[i, j] = fit_separable_poly(grays[j], grays[i])
-        scores = build_score_matrix(alphas, alphas, forward, backward, bandwidth=0.35)
+        scores = build_score_matrix(alphas, alphas, forward, backward, bandwidth=0.05)
         hits += rank_hit(root_candidates(scores), int(np.where(order == 0)[0][0]), 1)
     assert hits / sets >= 0.45  # Table 5 Chebyshev Rank-1 is 45.18%; chance here is 25%
