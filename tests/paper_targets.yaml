@@ -1,0 +1,16 @@
+# Published values from Banerjee & Ross, "Face Phylogeny Tree Using Basis Functions",
+# IEEE TBIOM 2(4), 2020, arXiv:2002.09068.
+source: arXiv:2002.09068
+
+# Sec. 3.1.1: alpha is 6-dimensional for Legendre and Chebyshev polynomials.
+alpha_dimension: 6
+
+# Table 2, photometric parameter ranges.
+gamma_range: [0.5, 1.5]
+
+# Tables 4-5, Chebyshev, face: the lower of the partial and full set figures.
+chebyshev_floor:
+  rank1: 45.18
+  rank2: 65.13
+  rank3: 76.86
+  ipt: 66.54
